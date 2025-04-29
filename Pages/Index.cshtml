@@ -1,0 +1,19 @@
+﻿ @page
+ @model WebAppTaskManager.Pages.IndexModel
+@{
+    ViewData["Title"] = "Task Manager";
+}
+
+<h1>Task Manager</h1>
+
+<form method="post">
+    <input type="text" name="Title" placeholder="Task Title" />
+    <button type="submit">Add Task</button>
+</form>
+
+<ul>
+    @foreach (var task in Model.Tasks)
+    {
+        <li>@task.Title - @task.IsCompleted</li>
+    }
+</ul>
